@@ -2,12 +2,14 @@
 var isCookieJarOpen = null;
 
 function closeLid() {
-  /* answer here */
-}
+  return isCookieJarOpen = false;
+  closeLid();
+};
 
 function openLid() {
-  /* answer here */
-}
+  return isCookieJarOpen = true;
+  openLid();
+};
 
 
 // Fill in the return value for the inner function to return a string, 'Hello World' using only the variables provided
@@ -17,10 +19,11 @@ function outerFunction() {
 
   function innerFunction() {
     var world = 'World';
-    return /* answer here */;
+    
+    return(hello + " " + world);
   }
   return innerFunction();
-}
+};
 
 
 // This is a function that takes in a 2d-array (or matrix) and returns the sum of all elements
@@ -31,12 +34,12 @@ function addMatrixElements(matrix) {
 
   for(var i = 0; i < matrix.length; i++) {
     /* fix counter variables in the second loop */
-    for(var i = 0; i < matrix[i].length; i++) {
-      result = result + matrix[i][i];
+    for(var x = 0; x < matrix[i].length; x++) {
+      result = result + matrix[x][i];
     }
   }
   return result;
-}
+};
 
 
 // This function is returning the wrong userObject data. It should be returning
@@ -45,7 +48,7 @@ function sendDataToClient() {
 
   var userObject = {
     handle: 'neo',
-    authenticated: false
+    authenticated: true
   }
 
   function authenticateUser(obj, username) {
@@ -63,4 +66,4 @@ function sendDataToClient() {
   }
   authenticateUser(userObject, 'neo')
   return userObject
-}
+};
